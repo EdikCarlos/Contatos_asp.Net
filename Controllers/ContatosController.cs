@@ -28,14 +28,16 @@ namespace Lista_Contatos.Controllers
             return View(contato);
         }
 
-        public IActionResult DeleteModal()
+        public IActionResult DeleteModal(int id)
         {
-            return View();
+            ContatoModel contato = _contatoRepositorio.ContactById(id);
+            return View(contato);
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            _contatoRepositorio.Remove(id);
+            return RedirectToAction("Index");
         }
         [HttpPost]
         public IActionResult Create(ContatoModel contato)

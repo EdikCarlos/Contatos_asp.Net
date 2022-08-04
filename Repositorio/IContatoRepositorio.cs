@@ -8,5 +8,7 @@ namespace Lista_Contatos.Repositorio
         List<ContatoModel> SearchAll();
         ContatoModel Add(ContatoModel contato);
         ContatoModel Change(ContatoModel contato);
+
+        bool Remove(int id);
     }
 }
